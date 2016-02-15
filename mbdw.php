@@ -2,8 +2,8 @@
 session_start();
 $user_id = $_SESSION['user_id'];
 $user_name = $_SESSION['user_name'];
-$connect = mysql_connect("localhost", "root", "eqrqrr9326") or die("cannot connect to mysql"); //username과 pw_user는 mysql 사용자, 암호이며 해당시스템에 맞게 수정
-mysql_select_db("mysql", $connect); //mysql에는 기본으로 mysql과 test DB가 있음
+$connect = mysql_connect("localhost", "root", "eqrqrr9326") or die("cannot connect to mysql"); 
+mysql_select_db("mysql", $connect);
 
 $quel = "select F_NAME from plotdb where ID = '".$user_id."'";
 $result = mysql_query($quel);
