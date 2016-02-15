@@ -16,6 +16,7 @@
         <h1>Main menu</h1>
       </div>
     <div data-role="content">
+    	
 <?php
 
 session_start();
