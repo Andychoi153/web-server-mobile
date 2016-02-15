@@ -1,0 +1,30 @@
+<?php
+session_start();
+$user_id = $_SESSION['user_id'];
+$user_name = $_SESSION['user_name'];
+$connect = mysql_connect("localhost", "root", "eqrqrr9326") or die("cannot connect to mysql"); //username과 pw_user는 mysql 사용자, 암호이며 해당시스템에 맞게 수정
+mysql_select_db("mysql", $connect); //mysql에는 기본으로 mysql과 test DB가 있음
+
+$quel = "select F_NAME from plotdb where ID = '".$user_id."'";
+$result = mysql_query($quel);
+$row=mysql_fetch_row($result); 
+$filename = $row[0];
+
+
+$filepath = '/up/'.$user_id.'/Data/fitted_'.$filename;
+$filesize = filesize($filepath);
+$path_parts = pathinfo($filepath);
+$filename = $path_parts['basename'];
+$extension = $path_parts['extension'];
+ 
+header("Pragma: public");
+header("Expires: 0");
+header("Content-Type: application/octet-stream");
+header("Content-Disposition: attachment; filename=\"$filename\"");
+header("Content-Transfer-Encoding: binary");
+header("Content-Length: $filesize");
+ 
+ob_clean();
+flush();
+readfile($filepath);
+?>
