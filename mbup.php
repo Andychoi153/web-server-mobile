@@ -21,8 +21,8 @@ session_start();
 $user_id = $_SESSION['user_id'];
 $user_name = $_SESSION['user_name'];
 $filt_name = $_POST["chk_info"];
-$connect = mysql_connect("localhost", "root", "eqrqrr9326") or die("cannot connect to mysql");//username과 pw_user는 mysql 사용자, 암호이며 해당시스템에 맞게 수정
-mysql_select_db("mysql", $connect); //mysql에는 기본으로 mysql과 test DB가 있음
+$connect = mysql_connect("localhost", "root", "eqrqrr9326") or die("cannot connect to mysql");
+mysql_select_db("mysql", $connect); 
 
 $quel = "update plotdb set FIT_FUNC ='".$filt_name."'  where (ID= '".$user_id."')";
 mysql_query($quel);
