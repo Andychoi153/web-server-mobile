@@ -10,7 +10,6 @@ $result = mysql_query($quel);
 $row=mysql_fetch_row($result); 
 $filename = $row[0];
 
-
 $filepath = '/up/'.$user_id.'/Data/fitted_'.$filename;
 $filesize = filesize($filepath);
 $path_parts = pathinfo($filepath);
