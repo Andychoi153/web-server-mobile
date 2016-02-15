@@ -1,0 +1,12 @@
+"FILTER" DB form
+creator char[20]
+Filter_name char[20]
+store int
+Category char[10]
+explanation char[100]
+input_data char[100]
+output_data char[100]
+download long
+rank double
+sql = """CREATE TABLE FILTER(CREATOR CHAR(20), FILE_NAME CHAR(50), FILTER_NAME CHAR(20), STORE TINYINT, CATEGORY CHAR(10), EXPLANATION TEXT, INPUT_DATA TEXT, OUTPUT_DATA TEXT, DOWNLOAD INT, RANK FLOAT)"""
+
