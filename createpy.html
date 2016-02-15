@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+  <head>
+    <title>plot&fit</title>
+    <meta charset="euc-kr" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+            maximum-scale=1.0, minimum-scale=1.0,
+            user-scalable=no"/>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+  </head>
+  <body>
+    <div data-role="page" data-theme="d">
+      <div data-role="header">
+        <h1>Main menu</h1>
+      </div>
+    <div data-role="content">
+	
+
+	<form method="POST" ENCTYPE="multipart/form-data" action="createpy.php">
+				<p></p>	
+				<p><h3>File name</h3></p>
+				<p>Please write name of your python function</p>
+				<p>It <strong>must not contain</strong> ".,?!" and other special character like "@#$%"</p>
+			<table stype="width:100%">			
+			<tr>
+			    <td><input type="text" name ="name"></td>
+			    <td>&nbsp;&nbsp;.py</td>
+			</tr>
+			</table>
+
+			
+			<select name="category">
+				<option value="">select category</option>
+				<option value="economy">Economy</option>
+				<option value="traffic">Traffic</option>
+				<option value="region">Region</option>
+			        <option value="weather">Weather</option>
+			        <option value="laboratory">Laboratory</option>
+			    </select><br/><br/><br/>
+		<center><input data-inline="true" data-icon="arrow-r" type="submit" value="next"></center>
+	</form>
+  </div>
+    <div data-role="footer" data-position="fixed">
+	<div data-role="navbar">
+	  <ul>
+	    <li><a href="upex.php" data-icon="home"
+		data-transition="slide" data-direction="reverse">Main menu</a></li>
+	  </ul>
+    </div>
+</div>
+      </body>
+</html>
+
