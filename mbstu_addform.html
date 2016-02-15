@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+  <head>
+    <title>Sign up</title>
+    <meta charset="euc-kr" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+            maximum-scale=1.0, minimum-scale=1.0,
+            user-scalable=no"/>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+  </head>
+  <body>
+    <div data-role="page" data-theme="d">
+      <div data-role="header">
+        <h1>Sign up</h1>
+      </div>
+    <div data-role="content">
+
+<script>
+
+function chk_input() {
+	if(user_form.fuserid.value=="") {
+		alert("Input Username");
+		user_form.fuserid.focus();
+		return false;
+
+	} else if(user_form.fpasswd.value=="") {
+		alert("Input Password")
+		user_form.fpasswd.focus();
+		return false;
+
+	} else if(user_form.fpasswd_re.value=="") {
+		alert("Please confirm your Password")
+		user_form.fpasswd_re.focus();
+		return false;
+
+	} else if(user_form.fpasswd.value != user_form.fpasswd_re.value) {
+		alert("Passwords do not match");
+		user_form.fpasswd.value="";
+		user_form.fpasswd_re.value="";
+		user_form.fpasswd.focus();
+		return false;
+
+	} else {
+		return true;
+	}
+}
+
+</script>
+
+
+<form name="user_form" action="mbstu_add_db.php" method="post" onSubmit="return chk_input()">
+
+
+<tr>     
+<div data-role="fieldcontain">
+	<label for="fuserid"><strong>UserName</strong></label>
+	
+	<table style ="width:100%"><tr><td><input type="text" name="fuserid" style ="width:100%" id="fuserid" size="12" 
+	maxlength="12" onblur="if(fuserid.value!='') chk_id();"></td>
+	<td><div style ="float:right;"><input  type="button" name="Button" value="Duplicate check" data-inline="true" onClick="chk_id();"></div></td></tr></table>
+	<font size="2"> (Less than 20 characters) </font>
+
+	<script>
+	function chk_id( )
+	{
+		if(user_form.fuserid.value=='') {
+			alert('Input User name');
+			user_form.fuserid.focus();
+		} else {
+			window.open('mbid_chk.php?fuserid='+user_form.fuserid.value,'IDwin', 'width=400, height=200');
+		}
+	}
+	</script>
+
+    </td>
+</div>
+</tr>
+
+<tr> 
+<div data-role="fieldcontain">    
+	<label for="fpasswd"><strong>Password</strong></label>
+	<input type="password" name="fpasswd" id="fpasswd" size="12" 
+	maxlength="10">
+	<font size="2"> (Less than 20 characters)  </font></td>
+</tr>
+
+<tr>     
+	<p><label for=fpasswd_re"><strong>Confirm Password</strong></label></p>
+	<input type="password" name="fpasswd_re" id="fpasswd_re" 
+	size="12" maxlength="10" onblur="chk_passwd( )">
+</tr>
+</div>
+
+<div data-role="fieldcontain"> 
+<tr>     
+	<label for="email"><strong>Email</strong></p></td>
+		<input id="email" type="text" name="femail" size="30" maxlength="30"> 
+		<font size="2"> (example : Andychoi153@google.com) </font></td>
+</tr>
+</div>
+<tr>
+	<td width="696" height="50" colspan="2"><p align="center"> 
+	<input type="submit" name="smt" value=" Sign up " >
+	<input type="reset" name="rst" value=" Rewrite ">
+</tr>
+
+</form>
+</div>
+    <div data-role="footer" data-position="fixed">
+	<div data-role="navbar">
+	  <ul>
+	    <li><a href="upex.php" data-icon="home"
+		data-transition="slide" data-direction="reverse">Main menu</a></li>
+	  </ul>
+    </div>
+</div>
+      </body>
+</html>
