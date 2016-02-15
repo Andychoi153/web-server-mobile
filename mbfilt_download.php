@@ -47,23 +47,23 @@ mysql_query($query) or die (mysql_error());
 <li>Z-transform Low Pass Filter</li>
 <li data-role="list-divider">Uploaded Filter</li>
 <?php
-$path = '/up/'.$user_id.'/Filter/'; // 오픈하고자 하는 폴더
-$entrys = array(); // 폴더내의 정보를 저장하기 위한 배열
-$dirs = dir($path); // 오픈하기
-while(false !== ($entry = $dirs->read())){ // 읽기
+$path = '/up/'.$user_id.'/Filter/'; 
+$entrys = array();
+$dirs = dir($path); 
+while(false !== ($entry = $dirs->read())){
    if(($entry != '.') && ($entry != '..')) {
-       if(is_dir($path.'/'.$entry)) { // 폴더이면
+       if(is_dir($path.'/'.$entry)) { 
             $entrys['dir'][] = $entry;
        }
-       else { // 파일이면
+       else { 
             $entrys['file'][] = $entry;
       }
    }
 }
- $dirs->close(); // 닫기
+ $dirs->close(); 
 
- $dircnt = count($entrys['dir']); // 폴더 수
- $filecnt = count($entrys['file']); // 파일 수
+ $dircnt = count($entrys['dir']); 
+ $filecnt = count($entrys['file']); 
 
 for($i =0; $i<$filecnt;$i++){
 	echo '<li>'.$entrys['file'][$i].'</li>';
