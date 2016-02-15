@@ -18,7 +18,7 @@
     <div data-role="content">
 
 <?php
-$fuserid=$_POST['fuserid'];                           //ÁŠÀÏ žÕÀú Œ±ŸðÇØŸß µÊ
+$fuserid=$_POST['fuserid'];                          
 $fpasswd=$_POST['fpasswd'];
 $fpasswd_re=$_POST['fpasswd_re'];
 $femail =$_POST['femail'];
@@ -26,14 +26,14 @@ $femail =$_POST['femail'];
 
 include "connect_db.php";
 
-/* --- ÇÊŒö ÀÔ·Â Ç×žñ¿¡ ŽëÇÑ ÀÔ·Â ¿©ºÎ °Ë»ç  --- */
+
 if($fuserid == "" || $fpasswd == "" || $fpasswd_re =="" || $fpasswd != $fpasswd_re) 
 {
 	echo "<script>
 	alert(' Please fill all form...');
 	history.back();
 	</script>";
-	die;    //ÇÁ·Î±×·¥À» ÁßŽÜ
+	die;    
 } 
 
 $sql="select count(*) from plotdb where ID='$fuserid' ";
@@ -46,10 +46,10 @@ if($reg_num>0) {
 	alert('Username is Duplicated');
 	history.back();
 	</script> ";
-	die;    //ÇÁ·Î±×·¥À» ÁßŽÜ
+	die;    
 }
 
-/* --- µ¥ÀÌÅÍº£ÀÌœº¿¡ ÀÔ·ÂµÈ Á€ºž ÀúÀå  --- */
+
 $sql="insert into plotdb (ID, PW, EMAIL)";
 $sql.="values ('".$fuserid."', '".$fpasswd."', '".$femail."')";
 $res=mysql_query($sql, $connect);
