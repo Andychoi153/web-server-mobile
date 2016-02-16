@@ -26,7 +26,6 @@ $user_id = $_SESSION['user_id'];
 $user_name = $_SESSION['user_name'];
 
 echo "<center><p><h3>Welcome to plot $user_id</h3></p></center>";
-
 ?>
 
 <iframe id="ifrm" src="lib.php" frameborder=0 width="100%" height ="300" scrolling=no border=50 ></iframe> 
