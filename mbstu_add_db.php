@@ -18,7 +18,7 @@
     <div data-role="content">
 
 <?php
-$fuserid=$_POST['fuserid'];                          
+$fuserid=$_POST['fuserid'];                           
 $fpasswd=$_POST['fpasswd'];
 $fpasswd_re=$_POST['fpasswd_re'];
 $femail =$_POST['femail'];
@@ -26,14 +26,13 @@ $femail =$_POST['femail'];
 
 include "connect_db.php";
 
-
 if($fuserid == "" || $fpasswd == "" || $fpasswd_re =="" || $fpasswd != $fpasswd_re) 
 {
 	echo "<script>
 	alert(' Please fill all form...');
 	history.back();
 	</script>";
-	die;    
+	die;   
 } 
 
 $sql="select count(*) from plotdb where ID='$fuserid' ";
@@ -64,6 +63,8 @@ if($tot_row > 0) {
 	chmod("/up/".$fuserid."/Data",0777);
 	mkdir("/up/".$fuserid."/Filter");
 	chmod("/up/".$fuserid."/Filter",0777);
+	copy("/home/andychoi/Untitled.ipynb","/home/andychoi/".$fuserid.".ipynb");
+	chmod("/home/andychoi/".$fuserid.".ipynb",0777);
 	session_start();
 	$_SESSION['user_id'] = $fuserid;
 	$_SESSION['user_name'] = $femail;
