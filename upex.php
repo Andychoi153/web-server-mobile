@@ -33,10 +33,11 @@ echo "<center><p><h3>Welcome to plot $user_id</h3></p></center>";
     
 <?php
 echo '<div data-role="controlgroup">';
+echo '<a href='."'tutorial.php'".' data-icon="info" data-role="button" name="button4">Tutorial</a>';
 echo '<a href='."'upcrpy.html'".' data-icon="arrow-r" data-role="button" name="button1">Upload python module</a>';
 echo '<a href='."'mbstore.php'".' data-icon="search" data-role="button" name="button2">Search module</a>';
 echo '<a href='."'mbfit.php'".' data-icon="grid" data-role="button" name="button3">Fitting</a>';
-echo '<a href='."'tutorial.php'".' data-icon="info" data-role="button" name="button4">Tutorial</a>';
+echo '<a href='."'http://andychoi.gonetis.com:8890/notebooks/".$user_id.".ipynb'".' data-icon="star" data-role="button" name="button5">Ipython</a>';
 echo '</div>';
 echo "<p><center><a href='mblogout.php'>Logout</a></center></p>";
 
