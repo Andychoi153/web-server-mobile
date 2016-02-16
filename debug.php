@@ -29,8 +29,8 @@ $user_id = $_SESSION['user_id'];
 $user_name = $_SESSION['user_name'];
 $src = $_POST["srccode"];
 
-$connect = mysql_connect("localhost", "root", "eqrqrr9326") or die("cannot connect to mysql"); //username과 pw_user는 mysql 사용자, 암호이며 해당시스템에 맞게 수정
-mysql_select_db("mysql", $connect); //mysql에는 기본으로 mysql과 test DB가 있음
+$connect = mysql_connect("localhost", "root", "eqrqrr9326") or die("cannot connect to mysql"); 
+mysql_select_db("mysql", $connect); 
 $quel = "SELECT FILE_NAME FROM FILTER WHERE CREATOR ='".$user_id."' AND DOWNLOAD = 2";
 $result = mysql_query($quel);
 $row=mysql_fetch_row($result);
